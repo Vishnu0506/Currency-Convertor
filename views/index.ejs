@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="./styles/main.css" />
+</head>
+
+<body>
+  <div class="flexbox">
+  <form action="/convert" method="post">
+      <fieldset>
+        <legend>Currency Conversion</legend>
+        <div class="padding">
+          <div>
+            <label class="head" for="Amount">Enter the amount</label>
+            <input type="number" id="fname" name="Amount" required />
+          </div>
+          <div>
+            <label class="head" for="Currency1">From (Currency Code)</label>
+            <input type="text" id="fname" name="Currency1" required minlength="3" maxlength="3" />
+          </div>
+          <div>
+            <label class="head" for="Currency2">To (Currency Code)</label>
+            <input type="text" id="fname" name="Currency2" required minlength="3" maxlength="3" />
+          </div>
+          <div>
+            <input class="convert" type="submit" value="Calculate" />
+          </div>
+          <div>
+            <% if (locals.total) { %>
+              <h3>
+                <span class="numbering">
+                  <%= amount %>
+                </span>
+                <%= Currency1 %> is
+                  equivalent to <span class="numbering">
+                    <%= total %>
+                  </span>
+                  <%= Currency2 %>
+              </h3>
+              <% } else { %>
+                <p>Nothing yet to display</p>
+                <% } %>
+          </div>
+        </div>
+      </fieldset>
+  </form>
+</div>
+</body>
+
+</html>
